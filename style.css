@@ -1,99 +1,360 @@
-/* Базовые стили */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
 }
-
 /* Шапка */
-header {
-    background: linear-gradient(135deg, #2c5530, #4a7c59);
-    color: white;
-    padding: 2rem;
-    text-align: center;
+.header {
+    background: linear-gradient(135deg, #2c5a4a 0%, #3e6456 100%);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
-header img {
-    border-radius: 70%;
-    border: 4px solid #fff;
-}
-
-/* Навигация */
-nav ul {
-    list-style: none;
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
 }
-
-nav a {
+/* Логотип */
+.logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+/* Навигация */
+.nav {
+    display: flex;
+    align-items: center;
+}
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.nav-list li a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Основной контент */
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-section {
-    background: white;
-    padding: 2rem;
-    margin-bottom: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* Кнопка гамбургер-меню (скрыта на десктопе) */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    justify-content: space-between;
+}
+.burger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+/* Основной контент */
+.main-page {
+    max-width: 1200px;
+    margin: 120px auto 40px auto;
+    padding: 0 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+.main-page h2 {
+    color: #2c5a4a;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.main-page p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
+}
+.main-page ol {
+    margin: 30px 0;
+    padding-left: 20px;
+}
+.main-page li {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #3e6456;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.main-page li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.main-page h3 {
+    color: #2c5a4a;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.main-page ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.main-page ul ul {
+    margin-left: 25px;
+    margin-top: 8px;
+}
+.main-page li li {
+    margin-bottom: 8px;
+    padding: 8px 0;
+    background: none;
+    border-left: none;
+}
+.main-page b {
+    color: #2c5a4a;
+    font-weight: 700;
+}
+hr {
+    margin: 30px 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #3e6456, transparent);
 }
 
-/* Галерея */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
 }
-
-figure {
+.gallery figure {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    position: relative;
+}
+.gallery figure:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.gallery figure:hover img {
+    transform: scale(1.05);
+}
+.gallery figcaption {
+    padding: 20px;
     text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c5a4a;
+    background: #f8f9fa;
+    border-top: 3px solid #3e6456;
 }
 
-figure img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-figcaption {
-    margin-top: 0.5rem;
-    font-style: italic;
-    color: #666;
-}
-
-/* Подвал */
+/* Футер */
 footer {
     text-align: center;
-    padding: 2rem;
-    background: #333;
-    color: white;
+    padding: 20px;
+    background: #2c5a4a;
+    margin-top: 20px;
 }
 
 footer a {
-    color: #4a7c59;
+    color: white;
     text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .main-page {
+        margin-top: 110px;
+        padding: 30px;
+    }
+    
+    .nav-list {
+        gap: 1rem;
+    }
+    
+    .nav-list li a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.95rem;
+    }
+    
+    .main-page h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-page {
+        margin-top: 100px;
+        padding: 25px;
+    }
+    
+    .nav-list {
+        gap: 0.8rem;
+    }
+    
+    .nav-list li a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .main-page h2 {
+        font-size: 2rem;
+    }
+    
+    .main-page h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .main-page {
+        margin-top: 140px;
+        padding: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    /* Скрываем обычное меню */
+    .nav-list {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #2c5a4a 0%, #3e6456 100%);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    
+    /* Показываем меню при активном состоянии */
+    .nav-list.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-list li a {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 10px;
+    }
+    
+    /* Показываем кнопку гамбургера */
+    .burger-menu {
+        display: flex;
+    }
+    
+    /* Анимация гамбургера при клике */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .main-page ol {
+        padding-left: 15px;
+    }
+    
+    .main-page ul {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .logo img {
+        height: 45px;
+    }
+    
+    .nav-list {
+        top: 65px;
+    }
+    
+    .main-page h2 {
+        font-size: 1.8rem;
+    }
+    
+    .main-page {
+        margin-top: 130px;
+    }
 }

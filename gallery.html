@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/icons/52b0d7ce-c04e-45d3-acab-693774fe3659.png">
-    <title>Галерея заповедника "УнГоро"</title>
+    <title>Галерея</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <header id="gallery_top">
-        <img src="images/13862cb1-679d-4ccb-809a-7eaeba89e98e.png" alt="Логотип заповедника" width="300" height="300">
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="fauna.html">Обитатели парка</a></li>
-                <li><a href="locations.html">Локации</a></li>
-                <li><a href="gallery.html">Галерея</a></li>
-                <li><a href="about.html">Контакты</a></li>
+    <header class="header" id="locations_top">
+        <div class="header-container">
+            <div class="logo">
+                <img class="logo" src="images/13862cb1-679d-4ccb-809a-7eaeba89e98e.png" alt="Логотип заповедника" width="300" height="300">
+            </div>        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="menu-item"><a href="index.html">Главная</a></li>
+                <li class="menu-item"><a href="fauna.html">Обитатели парка</a></li>
+                <li class="menu-item"><a href="locations.html">Локации</a></li>
+                <li class="menu-item"><a href="gallery.html">Галерея</a></li>
+                <li class="menu-item"><a href="about.html">Контакты</a></li>
             </ul>
+            <button class="burger-menu" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
         </nav>
     </header>
-    
-    <main>
+    <main class="main-page">
         <h1>Галерея заповедника</h1>
         
         <div class="gallery">
